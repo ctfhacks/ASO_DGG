@@ -1,0 +1,15 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "gusztavvargadr/ubuntu-server-2004-lts"
+  config.vm.box_version = "2004.0.2408"
+  config.vm.hostname = "server-DGG"
+  config.vm.synced_folder "./CarpetaSync", "/data"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "Ubuntu Server"
+    vb.memory = "2048"
+    vb.cpus = 2 
+  end
+end
