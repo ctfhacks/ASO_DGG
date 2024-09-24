@@ -1,0 +1,25 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "generic/ubuntu2204"
+  config.vm.hostname = "web-DGG"
+
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
+  config.vm.network "private_network", ip: "172.16.0.33", netmask:"255.255.0.0"
+  config.vm.network "public_network", ip: "10.99.0.33", netmask:"255.255.0.0"
+
+  config.vm.synced_folder "./website", "/var/www/html"
+
+  config.vm.provider "virtualbox" do |vb|
+
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+
+    vb.name = "Web Server"
+    vb.memory = "3072"
+    vb.cpus = 3
+  end
+
+end
