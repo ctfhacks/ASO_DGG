@@ -1,5 +1,5 @@
 # ÍNDICE UT01 🔗
 
-[Práctica1](/UT01_introduccion/Practicas/PR01/PR01.md)
+[Práctica1](./Practicas/PR01/PR01.md)
 
-[Práctica2](#)
+[Práctica2](./Practicas/PR02/PR02.md)
