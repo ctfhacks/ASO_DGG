@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  
+
+  config.winrm.transport = "plaintext"
+  config.winrm.basic_auth_only = true
+
+  config.vm.define "WS2019" do |win19| 
+      win19.vm.box = "gusztavvargadr/windows-server-2019-standard"
+      win19.vm.hostname = "WS2019"
+      win19.vm.network "private_network", ip: "10.10.11.33", netmask: "255.255.255.0"
+
+      win19.vm.provider "virtualbox" do |vb|
+          vb.memory = "8096"
+          vb.cpus = 4
+      end
+  end
+
+  config.vm.define "W10" do |w10|
+      w10.vm.box = "gusztavvargadr/windows-10"
+      w10.vm.hostname = "W10"
+      w10.vm.network "private_network", ip: "10.10.11.32", netmask: "255.255.255.0"
+
+      w10.vm.provider "virtualbox" do |vb|
+          vb.memory = "6048"
+          vb.cpus = 2
+      end
+  end
+
+end
