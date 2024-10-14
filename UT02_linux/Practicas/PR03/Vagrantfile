@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "generic/ubuntu2204"
+
+  config.vm.network "public_network", ip: "172.16.0.58", netmask: "255.255.0.0"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+    vb.name = "ubuntuPublic"
+  end
+end
