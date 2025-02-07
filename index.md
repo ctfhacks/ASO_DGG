@@ -12,4 +12,4 @@
 
 [Proyecto 1º evaluación](./1.ProyectoEvalucion/1.Proyecto.md)
 
-[Proyecto 2º evaluación](./2.ProyectoEvalucion/2.Proyecto.md)
+[Proyecto 2º evaluación](./2.ProyectoEvaluacion/2.Proyecto.md)
